@@ -12,11 +12,12 @@
   <section class="hero">
     <nav>
       <h2 class="logo">AYYAN</h2>
-      <ul>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Projects</li>
-        <li>Contact</li>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+      <ul id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
@@ -31,14 +32,14 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="about">
+  <section class="about" id="about">
     <h2>About Me</h2>
     <p>I am a passionate and motivated Computer Science student with a strong interest in web development and problem-solving. I enjoy building clean, responsive, and user-friendly websites using HTML, CSS, and JavaScript. I am continuously learning new technologies to improve my skills and grow as a developer. I am focused, curious, and always eager to take on new challenges that help me improve both technically and personally. My goal is to become a skilled software developer and contribute to meaningful projects in the tech industry.
     </p>
   </section>
 
   <!-- SKILLS -->
-  <section class="skills">
+  <section class="skills" id="skills">
     <h2>Skills</h2>
     <div class="skill-boxes">
       <div class="box">HTML</div>
@@ -48,7 +49,7 @@
     </div>
   </section>
 
-  <section class="certifications">
+  <section class="certifications" id="certifications">
   <h2>Certifications</h2>
 
   <div class="cert-container">
@@ -97,7 +98,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <h2>Contact Me</h2>
     <p>Email: ayyanahmed6106@gmail.com</p>
     <button>Let's Connect</button>
@@ -106,6 +107,24 @@
   <footer>
     <p>© 2026 Ayyan | All Rights Reserved</p>
   </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
